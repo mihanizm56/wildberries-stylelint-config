@@ -1,6 +1,6 @@
 {
   "name": "@wildberries/stylelint-config",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "description": "",
   "devDependencies": {
     "@commitlint/cli": "9.1.2",
