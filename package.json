@@ -1,0 +1,41 @@
+{
+  "name": "@wildberries/stylelint-config",
+  "version": "1.0.0-beta.1",
+  "description": "",
+  "devDependencies": {
+    "@commitlint/cli": "9.1.2",
+    "commitizen": "4.0.4",
+    "cz-customizable": "6.2.0",
+    "husky": "3.0.9"
+  },
+  "dependencies": {
+    "stylelint": "11.1.1",
+    "stylelint-config-recommended-scss": "4.0.0",
+    "stylelint-config-standard": "19.0.0",
+    "stylelint-order": "3.1.1",
+    "stylelint-scss": "3.12.0"
+  },
+  "scripts": {
+    "commit": "git add . && git commit --no-edit",
+    "release": "npm run commit && git push && npm publish --access=public",
+    "beta": "npm run commit && git push && npm publish --tag beta --access=public"
+  },
+  "keywords": [],
+  "author": "mihanizm56",
+  "license": "MIT",
+  "main": "index.js",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g config/git/commitlint.js",
+      "prepare-commit-msg": "node config/git/prepare-commit.js"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/git/commitizen.js"
+    }
+  }
+}
